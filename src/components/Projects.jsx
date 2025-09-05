@@ -55,7 +55,7 @@ const items = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="py-24 scroll-mt-40 md:scroll-mt-0">
       <motion.h2
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}

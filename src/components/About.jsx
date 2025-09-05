@@ -5,8 +5,7 @@ import { FaGithub, FaLinkedin, FaXTwitter, FaEnvelope } from 'react-icons/fa6';
 
 export default function About() {
   return (
-    <section id="about" className="py-16 md:py-24">
-      {/* Heading - centered on small screens, left-aligned on medium and larger screens */}
+    <section id="about" className="py-24 scroll-mt-40 md:scroll-mt-0"> {/* <-- CHANGE HERE */}
       <motion.h2
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -58,7 +58,7 @@ export default function Skills() {
     };
 
     return (
-        <section id="skills" className="py-24  relative overflow-hidden">
+        <section id="skills" className="py-24  relative overflow-hidden scroll-mt-40 md:scroll-mt-0">
             {/* Place the background component here */}
             <ThreeBackground />
 

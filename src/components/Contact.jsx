@@ -10,7 +10,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 flex flex-col items-center">
+    <section id="contact" className="py-24 flex flex-col items-center scroll-mt-40 md:scroll-mt-0">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

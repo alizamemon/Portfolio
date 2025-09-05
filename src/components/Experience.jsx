@@ -30,7 +30,7 @@ const jobs = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24">
+    <section id="experience" className="py-24 scroll-mt-40 md:scroll-mt-0">
       <motion.h2
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
