@@ -29,13 +29,11 @@ export default function About() {
         />
 
         <div>
-          {/* About content - shorter for small screens, longer for medium and larger screens */}
-          <p className="text-white/75 text-justify md:hidden">
-            I'm a recent <strong>computer engineering </strong> graduate specializing in <strong>web applications</strong> with a keen interest in <strong>AI</strong>. I'm currently seeking a full-time role or freelance projects where I can apply my skills in frontend development and explore new challenges in the AI field.
-          </p>
           <p className="text-white/75 text-justify hidden md:block">
-            I'm a recent <strong>computer engineering </strong>graduate with a passion for building modern, responsive interfaces and a keen interest in <strong>artificial intelligence</strong>. I specialize in creating <strong>web applications</strong>with buttery-smooth animations and interactive user experiences. My recent work includes developing interactive product landing pages, data dashboards, and 3D micro-sites. I'm currently seeking a full-time role or freelance projects where I can apply my skills in frontend development and explore new challenges in the AI field.
+            I’m a recent Computer Engineering graduate with a strong passion for cybersecurity and building secure, resilient systems. I specialize in designing and implementing secure applications, end-to-end encrypted communications, and machine learning–powered threat detection systems. My recent projects include developing intrusion detection and prevention systems, secure chat applications, and cloud-based security frameworks. I’m currently seeking a full-time role or freelance opportunities where I can apply my skills in cybersecurity, secure system design, and AI-driven defense technologies.
           </p>
+          {/* Cybersecurity intro */}
+
 
           <div className="mt-6 flex flex-wrap gap-4 justify-center md:justify-start">
             {/* Gmail Link with animation */}

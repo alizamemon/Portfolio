@@ -42,7 +42,7 @@ export default function Navbar() {
           ))}
           <a
             href="/Resume-2025.pdf"
-            download="Aliza_Memon_Resume.pdf"
+            download="#"
             className="rounded-xl bg-primary px-4 py-2 font-semibold shadow-glow hover:brightness-110 transition"
           >
             Hire Me

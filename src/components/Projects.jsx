@@ -7,8 +7,39 @@ import project3 from '../assets/project3.jpeg';
 import project4 from '../assets/project4.png';
 import project5 from '../assets/project5.webp';
 import project6 from '../assets/project6.webp';
+import project7 from '../assets/project7.png';
+import project8 from '../assets/project8.png';
+import project9 from '../assets/project9.png';
 
 const items = [
+  {
+    title: 'Cyber Assurance Framework',
+    desc: 'High-impact cyber assurance framework for securing cloud-based systems. Features include IAM, RBAC, AES-256 encryption, live audit trails, and compliance dashboard built with Flask and Streamlit.',
+    img: project7,
+    tech: ['Python', 'Flask', 'Streamlit', 'RBAC', 'IAM', 'Cybersecurity'],
+    link: 'https://github.com/alizamemon/Cyber-Assurance-Framework'
+  },
+  {
+    title: 'ML-Powered Intrusion Detection & Prevention System',
+    desc: 'An end-to-end ML-based IDS/IPS using Random Forest and SMOTE to detect malicious network traffic and automatically block attacking IPs. Features real-time analytics and threat visualization via Streamlit.',
+    img: project8,
+    tech: ['Python', 'Machine Learning', 'SMOTE', 'IDS', 'IPS', 'Streamlit'],
+    link: 'https://github.com/alizamemon/ML--Intrusion-Detection-Prevention-System'
+  },
+  {
+    title: 'Secure ML Chat App',
+    desc: 'End-to-end encrypted chat application with ML-based spam detection. Features AES session encryption, RSA key exchange, Tkinter GUI, audit logging, and real-time message security monitoring.',
+    img: project9,
+    tech: ['Python', 'Socket Programming', 'Cryptography', 'Tkinter', 'ML'],
+    link: 'https://github.com/alizamemon/Secure_ML_chat_app'
+  },
+  {
+    title: 'Secure Medical System',
+    desc: 'A secure medical system with a Tkinter GUI for encrypted medical image storage. The project utilizes Pycryptodome for encryption, decryption, and hashing to ensure data integrity and confidentiality.',
+    img: project5,
+    tech: ['Python', 'Pycryptodome', 'Tkinter'],
+    link: 'https://github.com/alizamemon/Secure_Medical_Image_System'
+  },
   {
     title: 'Saas Landing Experience',
     desc: 'A modern SaaS landing page built with React.js and Tailwind CSS. It features a mobile-first UI with an interactive 3D hero section and dynamic animations, demonstrating skills in creating visually engaging web experiences.',
@@ -25,24 +56,17 @@ const items = [
   },
   {
     title: 'Mindscape-VR',
-    desc: 'A cross-platform VR application designed to provide interactive learning sessions for students A detailed jungle theme and a captivating solar space theme. The app also includes engaging quizzes to enhance learning and retention.',
+    desc: 'A cross-platform VR application designed to provide interactive learning sessions for students. A detailed jungle theme and a captivating solar space theme. The app also includes engaging quizzes to enhance learning and retention.',
     img: project3,
-    tech: ['flutter', 'Dart', 'Unity3D', 'Blender', 'Firebase'],
+    tech: ['Flutter', 'Dart', 'Unity3D', 'Blender', 'Firebase'],
     link: 'https://github.com/alizamemon/Mindscape-VR-App'
   },
   {
     title: 'Arcade Game',
-    desc: 'This project includes real-time movement, collision detection, and score tracking, all within a browser-based environment. Its a simple yet effective demonstration of creating an interactive, fully functional game from scratch.',
+    desc: 'This project includes real-time movement, collision detection, and score tracking, all within a browser-based environment. It’s a simple yet effective demonstration of creating an interactive, fully functional game from scratch.',
     img: project4,
     tech: ['HTML', 'CSS', 'JavaScript'],
     link: 'https://github.com/alizamemon/Arcade-game'
-  },
-  {
-    title: 'Secure Medical System',
-    desc: 'A secure medical system with a Tkinter GUI for encrypted medical image storage. The project utilizes Pycryptodome for encryption, decryption, and hashing to ensure data integrity and confidentiality.',
-    img: project5,
-    tech: ['Python', 'Pycryptodome', 'Tkinter'],
-    link: 'https://github.com/alizamemon/Secure_Medical_Image_System'
   },
   {
     title: 'LearnSphere',

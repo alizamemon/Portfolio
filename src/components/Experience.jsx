@@ -18,14 +18,6 @@ const jobs = [
       'Optimized performance: code-splitting and image strategies.'
     ]
   },
-  {
-    role: 'Computer Engineering — Graduate',
-    period: '2021 — 2025',
-    points: [
-      'Final year project: immersive VR learning experience.',
-      'Led a small team; delivered on time and documented.'
-    ]
-  },
 ]
 
 export default function Experience() {
