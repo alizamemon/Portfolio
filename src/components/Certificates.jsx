@@ -1,42 +1,28 @@
-import React from 'react';
-import { motion } from "framer-motion";
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
 
 const certificates = [
-  {
-    title: "Oracle University",
-    image: "/src/assets/Orecal.PNG",
-  },
-  {
-    title: "Fundamentals of Encryption & Quantum-Safe Techniques ",
-    image: "/src/assets/IBM Encryprtion.PNG",
-  },
-  {
-    title: "End Point Security ",
-    image: "/src/assets/Cisco.PNG",
-  },
-  {
-    title: "Generative AI",
-    image: "/src/assets/Gen AI.jpg",
-  },
-  {
-    title: "XPACE Technologies",
-    image: "/src/assets/XSpace.PNG",
-  },
-  {
-    title: "$0th IEEP All Pakistan ",
-    image: "/src/assets/IEEEP.PNG",
-  },
+  { title: "Fundamentals of Encryption & Quantum-Safe Techniques", image: "/IBM Encryprtion.PNG" },
+  { title: "Cyber Threat Management", image: "/cyber.png" },
+  { title: "End Point Security", image: "/Cisco.PNG" },
+  { title: "AI Foundations Associate", image: "/Oracle.PNG" },
+  { title: "Generative AI", image: "/Gen AI.jpg" },
+  { title: "Aspire Leadership programe", image: "/aspire.png" },
+  { title: "40th IEEEP All Pakistan Students Seminar", image: "/IEEEP.PNG" },
+  { title: "39Th Multi-Topic International Conference", image: "/Multi International.PNG" },
+  { title: "XPACE Technologies", image: "/XSpace.PNG" },
 ];
 
 export default function Certificates() {
+  const [selectedImg, setSelectedImg] = useState(null);
+
   return (
     <section className="py-20 bg-gradient-to-b from-gray-950 to-gray-900 text-white" id="certificates">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl font-bold mb-4"
+        <motion.h2 
+          initial={{ opacity: 0, y: 30 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          className="text-4xl font-bold mb-10"
         >
           Certifications & Achievements
         </motion.h2>
@@ -46,20 +32,43 @@ export default function Certificates() {
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="bg-gray-800 p-4 rounded-2xl shadow-lg border border-gray-700 hover:border-indigo-500 transition"
+              onClick={() => setSelectedImg(cert.image)}
+              className="bg-gray-800 p-4 rounded-2xl shadow-lg border border-gray-700 hover:border-indigo-500 transition cursor-pointer"
             >
-              <div className="relative w-full h-64 mb-4">
+              <div className="relative w-full h-48 mb-4">
                 <img
                   src={cert.image}
                   alt={cert.title}
-                  className="w-full h-full object-cover rounded-xl"
+                  className="w-full h-full object-contain rounded-xl" 
                 />
               </div>
-              <h3 className="text-lg font-semibold">{cert.title}</h3>
+              <h3 className="text-sm font-semibold">{cert.title}</h3>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* --- Lightbox / Modal --- */}
+      <AnimatePresence>
+        {selectedImg && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImg(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 cursor-zoom-out"
+          >
+            <motion.img 
+              initial={{ scale: 0.5 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.5 }}
+              src={selectedImg} 
+              className="max-w-full max-h-full rounded-lg shadow-2xl"
+            />
+            <button className="absolute top-10 right-10 text-white text-3xl font-bold">&times;</button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

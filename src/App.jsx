@@ -8,6 +8,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Skills from './components/Skills'
 import Certificates from './components/Certificates'
+import Gallery from './components/Gallery'
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Projects />
         <Experience />
         <Certificates />
+        <Gallery/>
         <Contact />
       </main>
       <Footer />
