@@ -16,12 +16,12 @@ export default function App() {
       <Navbar />
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
+        {/* <About /> */}
+        <Gallery />
         <Certificates />
-        <Gallery/>
+        <Projects />
+        <Skills />
+        <Experience />
         <Contact />
       </main>
       <Footer />

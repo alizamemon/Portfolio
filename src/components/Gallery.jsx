@@ -5,10 +5,15 @@ const galleryImages = [
   { id: 1, src: "/multi.jpg", title: "Team Win Award", desc: "39Th Multi Topic International Symposium" },
   { id: 2, src: "/silver.jpeg", title: "Receiving Silver Medal", desc: "39Th Multi Topic International Symposium" },
   { id: 3, src: "/presenting.jpeg", title: "Presenting my research", desc: "39Th Multi Topic International Symposium" },
-  { id: 4, src: "/award4.jpg", title: "CIPE'25 Presentation", desc: "Presenting my Research on Data Security" },
-  { id: 5, src: "/award5.jpg", title: "Community Leadership", desc: "Awarded for Excellence in Technical Volunteering" },
-  { id: 6, src: "/award6.jpg", title: "Innovation Award", desc: "Best Project Award at Multi-Topic Conference" },
-  { id: 7, src: "/award2.jpg", title: "Team Win at Technova", desc: "Secured 1st Position in Cyber Track" },
+  { id: 4, src: "/40th.jpeg", title: "Receiving 2nd Position", desc: "40Th IEEEP All Pakistan student's Seminar 2025" },
+  { id: 5, src: "/qnA.jpeg", title: "QnA session", desc: "40Th IEEEP All Pakistan student's Seminar 2025" },
+  { id: 6, src: "/presentVR.jpeg", title: "Presenting Project", desc: "Mindscape-VR" },
+  { id: 7, src: "/techteam.jpeg", title: "Team Win at Technova-3rd Position", desc: "Technova-2025" },
+  { id: 8, src: "/presenttech.jpeg", title: "Presenting at Tech Event", desc: "Technova-2025" },
+  { id: 9, src: "/silvermedal.jpeg", title: "Silver Medal", desc: "" },
+  { id: 10, src: "/techaward.jpeg", title: "3rd Position with Cash prize", desc: "" },
+  { id: 11, src: "/seo.jpeg", title: "Attended International Conference", desc: "" },
+
 ];
 
 export default function Gallery() {
@@ -18,8 +23,8 @@ export default function Gallery() {
     <section className="py-20 bg-gray-950 text-white" id="gallery">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-indigo-400">Moments of Excellence</h2>
-          <p className="text-gray-400 mt-2">A glimpse into my journey, awards, and professional milestones.</p>
+          <h2 className="text-4xl font-bold text-white">Moments of Excellence</h2>
+          <p className="text-primary mt-2">A glimpse into my journey, awards, and professional milestones.</p>
         </div>
 
         {/* Masonry-like Grid */}
@@ -55,7 +60,7 @@ export default function Gallery() {
             onClick={() => setSelectedImg(null)}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4"
           >
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               className="relative max-w-4xl w-full"

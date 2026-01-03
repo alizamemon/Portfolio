@@ -3,9 +3,10 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const links = [
-  { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
+  // { href: '#about', label: 'About' },
+  { href: '#gallery', label: 'Achievements' },
   { href: '#projects', label: 'Projects' },
+  { href: '#skills', label: 'Skills' },
   { href: '#experience', label: 'Experience' },
   { href: '#contact', label: 'Contact' },
 ];
@@ -40,13 +41,13 @@ export default function Navbar() {
               <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-primary rounded-full group-hover:w-full transition-[width] duration-300 -translate-x-1/2"></span>
             </a>
           ))}
-          <a
+          {/* <a
             href="/Resume-2025.pdf"
             download="#"
             className="rounded-xl bg-primary px-4 py-2 font-semibold shadow-glow hover:brightness-110 transition"
           >
             Hire Me
-          </a>
+          </a> */}
         </nav>
 
         <button onClick={() => setOpen(!open)} className="md:hidden p-2 rounded-lg border border-white/10">
@@ -71,7 +72,7 @@ export default function Navbar() {
                   </a>
                 </li>
               ))}
-              <li>
+              {/* <li>
                 <a
                   href="/Resume-2025.pdf"
                   download="Aliza_Memon_Resume.pdf"
@@ -79,7 +80,7 @@ export default function Navbar() {
                 >
                   Hire Me
                 </a>
-              </li>
+              </li> */}
             </ul>
           </motion.nav>
         )}

@@ -10,7 +10,7 @@ const jobs = [
     ]
   },
   {
-    role: 'Frontend Developer — Xpace Technologies pvt Ltd',
+    role: 'Web Developer — Xpace Technologies pvt Ltd',
     period: '2024',
     points: [
       'Built animated, accessible UIs with React and Tailwind.',
