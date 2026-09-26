@@ -1,65 +1,53 @@
 import React from 'react'
-import { FaGithub, FaLinkedin, FaXTwitter, FaEnvelope } from 'react-icons/fa6';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
 
 export default function Footer() {
-  return (
-    <footer className="mt-20 border-t border-white/5 py-8 text-center">
-      <div className="flex flex-col md:flex-row items-center justify-center gap-2">
-        <p className="text-sm text-white/60">
-          © {new Date().getFullYear()} Aliza Memon —
-        </p>
+    return (
+        <footer className="mt-2 border-t border-white/10 py-3 text-center bg-transparent">
+            {/* First Line: Designed & built text */}
+            <p className="font-display text-xs text-white/50">
+                Designed & built by <span className="gradient-text font-semibold">Aliza Memon</span>
+            </p>
 
-        <div className="flex flex-wrap gap-4 justify-center mt-2 md:mt-0">
-          {/* Gmail Link */}
-          <motion.a
-            href="mailto:Alizanisar11@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 text-xl text-white transition-colors duration-300"
-            whileHover={{ scale: 1.15, color: '#0ea5e9' }}
-            transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-          >
-            <FaEnvelope />
-          </motion.a>
+            {/* Second Line: Social Icons */}
+            <div className="flex items-center justify-center gap-4 mt-2">
+                {/* Gmail Link */}
+                <motion.a
+                    href="mailto:alizanisar11@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/70 hover:text-white text-base transition-colors duration-300"
+                    whileHover={{ scale: 1.15, color: '#84cc16' }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+                >
+                    <FaEnvelope />
+                </motion.a>
 
-          {/* Github Link */}
-          <motion.a
-            href="https://github.com/alizamemon"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 text-xl text-white transition-colors duration-300"
-            whileHover={{ scale: 1.15, color: '#0ea5e9' }}
-            transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-          >
-            <FaGithub />
-          </motion.a>
+                {/* Github Link */}
+                <motion.a
+                    href="https://github.com/alizamemon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/70 hover:text-white text-base transition-colors duration-300"
+                    whileHover={{ scale: 1.15, color: '#84cc16' }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+                >
+                    <FaGithub />
+                </motion.a>
 
-          {/* LinkedIn Link */}
-          <motion.a
-            href="https://www.linkedin.com/in/your-linkedin-profile"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 text-xl text-white transition-colors duration-300"
-            whileHover={{ scale: 1.15, color: '#0ea5e9' }}
-            transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-          >
-            <FaLinkedin />
-          </motion.a>
-
-          {/* X (formerly Twitter) Link */}
-          <motion.a
-            href="https://x.com/your-x-handle"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 text-xl text-white transition-colors duration-300"
-            whileHover={{ scale: 1.15, color: '#0ea5e9' }}
-            transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-          >
-            <FaXTwitter />
-          </motion.a>
-        </div>
-      </div>
-    </footer>
-  )
+                {/* LinkedIn Link */}
+                <motion.a
+                    href="https://www.linkedin.com/in/aliza-memon-engr/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/70 hover:text-white text-base transition-colors duration-300"
+                    whileHover={{ scale: 1.15, color: '#84cc16' }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+                >
+                    <FaLinkedin />
+                </motion.a>
+            </div>
+        </footer>
+    )
 }

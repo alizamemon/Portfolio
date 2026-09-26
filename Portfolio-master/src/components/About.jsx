@@ -1,91 +1,107 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import profile from '/public/profile2.jpeg';
-import { FaGithub, FaLinkedin, FaXTwitter, FaEnvelope } from 'react-icons/fa6';
+import profile from '/public/profile3.jpg';
+
+const stats = [
+  { label: 'Projects Built', value: '10+' },
+  { label: 'CGPA', value: '3.5/4.0' },
+  { label: 'Certifications', value: '10+' },
+];
 
 export default function About() {
   return (
-    <section id="about" className="py-24 scroll-mt-40 md:scroll-mt-0"> {/* <-- CHANGE HERE */}
-      <motion.h2
-        initial={{ opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.6 }}
-        className="text-3xl font-bold text-center md:text-left"
-      >
-        About Me
-      </motion.h2>
-
-      <div className="mt-8 grid grid-cols-1 items-center gap-10 md:grid-cols-[240px,1fr]">
-        {/* Profile image - hidden on small screens, shown on medium and larger screens */}
-        <motion.img
-          initial={{ scale: 0.9, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          src={profile}
-          alt="Profile"
-          className="mx-auto w-48 rounded-2xl border border-white/10 p-1 shadow hidden md:block"
-        />
-
+      <section id="about" className="py-5 md:pb-4 md:pt-2 flex flex-col justify-between min-h-[calc(80vh-120px)] md:min-h-0">
         <div>
-          <p className="text-white/75 text-justify hidden md:block">
-            I’m a recent Computer Engineering graduate with a strong passion for cybersecurity and building secure, resilient systems. I specialize in designing and implementing secure applications, end-to-end encrypted communications, and machine learning–powered threat detection systems. My recent projects include developing intrusion detection and prevention systems, secure chat applications, and cloud-based security frameworks. I’m currently seeking a full-time role or freelance opportunities where I can apply my skills in cybersecurity, secure system design, and AI-driven defense technologies.
-          </p>
-          {/* Cybersecurity intro */}
+          <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              className="section-eyebrow block text-center md:text-left text-[11px] sm:text-xs"
+          >
+            Get to know me
+          </motion.span>
+          <motion.h2
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5 }}
+              className="mt-0.5 font-display text-xl md:text-4xl font-bold text-center md:text-left"
+          >
+            About <span className="gradient-text">Me</span>
+          </motion.h2>
 
-
-          <div className="mt-6 flex flex-wrap gap-4 justify-center md:justify-start">
-            {/* Gmail Link with animation */}
-            <motion.a
-              href="mailto:Alizanisar11@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-2xl text-white/80 hover:text-primary transition-colors duration-300"
-              whileHover={{ scale: 1.15 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+          <div className="mt-3 md:mt-10 grid grid-cols-1 items-start gap-3 md:gap-10 md:grid-cols-[280px,1fr]">
+            {/* Profile Picture */}
+            <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="mx-auto md:mx-0"
             >
-              <FaEnvelope />
-            </motion.a>
+              <div className="relative w-28 sm:w-36 md:w-56">
+                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-primary/30 to-primary2/30 blur-md md:blur-xl" />
+                <img
+                    src={profile}
+                    alt="Aliza Memon"
+                    className="relative w-28 sm:w-36 md:w-56 rounded-2xl border border-line object-cover shadow-card"
+                />
+              </div>
+            </motion.div>
 
-            {/* Github Link with animation */}
-            <motion.a
-              href="https://github.com/alizamemon"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-2xl text-white/80 hover:text-primary transition-colors duration-300"
-              whileHover={{ scale: 1.15 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-            >
-              <FaGithub />
-            </motion.a>
+            <div>
+              {/* Mobile View Clean & Readable Text */}
+              <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="block md:hidden text-white/80 text-xs text-left leading-relaxed mt-1"
+              >
+                <p>
+                  Computer Engineering graduate with expertise in <span className="text-white font-medium">Java & Full-Stack Web Development</span>.
+                </p>
+                <p className="mt-1.5 text-white/65 text-[11px]">
+                  Specialized in <span className="text-white/85">Spring Boot, React, AWS cloud</span>, RBAC security, and ML-powered systems.
+                </p>
+              </motion.div>
 
-            {/* LinkedIn Link with animation */}
-            <motion.a
-              href="https://www.linkedin.com/in/your-linkedin-profile"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-2xl text-white/80 hover:text-primary transition-colors duration-300"
-              whileHover={{ scale: 1.15 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-            >
-              <FaLinkedin />
-            </motion.a>
+              {/* Desktop View Detailed Text */}
+              <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  className="hidden md:block text-white/70 text-base text-justify leading-relaxed"
+              >
+                I'm a Computer Engineering graduate with hands-on expertise in{' '}
+                <span className="text-white/90 font-medium">Java and full-stack web development</span>.
+                I'm passionate about building reliable backend systems, REST APIs, and scalable web
+                applications using <span className="text-white/90 font-medium">Spring Boot and React</span>,
+                with solid experience in database integrity, secure access control (RBAC/JWT), and
+                production deployments on AWS. My background also includes cybersecurity — designing
+                encrypted applications and ML-powered threat detection systems — which shapes how I
+                approach building secure software end-to-end.
+              </motion.p>
 
-            {/* X (formerly Twitter) Link with animation */}
-            <motion.a
-              href="https://x.com/your-x-handle"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-2xl text-white/80 hover:text-primary transition-colors duration-300"
-              whileHover={{ scale: 1.15 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-            >
-              <FaXTwitter />
-            </motion.a>
+              {/* Stats Section */}
+              <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="mt-3 md:mt-8 grid grid-cols-3 gap-1.5 sm:gap-4"
+              >
+                {stats.map(s => (
+                    <div key={s.label} className="glass rounded-xl p-2 sm:p-4 text-center">
+                      <p className="font-display text-xs sm:text-2xl font-bold gradient-text">{s.value}</p>
+                      <p className="mt-0.5 text-[8px] sm:text-xs text-white/60 leading-tight">{s.label}</p>
+                    </div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 }

@@ -1,0 +1,60 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#131318"/>
+      <stop offset="100%" stop-color="#0a0a0c"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c6f135" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#c6f135" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bgGrad2)"/>
+  <circle cx="670" cy="110" r="190" fill="url(#glowA)"/>
+  <circle cx="120" cy="420" r="180" fill="url(#glowB)"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.06">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="133" y1="0" x2="133" y2="500"/>
+    <line x1="266" y1="0" x2="266" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="533" y1="0" x2="533" y2="500"/>
+    <line x1="666" y1="0" x2="666" y2="500"/>
+  </g>
+
+  <!-- isometric shelf grid representing inventory -->
+  <g transform="translate(230,140)">
+    <!-- stack of boxes -->
+    <g stroke="#ffffff" stroke-opacity="0.15">
+      <rect x="0" y="0" width="340" height="220" fill="none" stroke-dasharray="4 6"/>
+    </g>
+
+    <!-- boxes -->
+    <g>
+      <rect x="20" y="140" width="70" height="60" rx="4" fill="#191921" stroke="#c6f135" stroke-width="2"/>
+      <rect x="100" y="110" width="70" height="90" rx="4" fill="#191921" stroke="#8b5cf6" stroke-width="2"/>
+      <rect x="180" y="150" width="70" height="50" rx="4" fill="#191921" stroke="#c6f135" stroke-width="2"/>
+      <rect x="260" y="90" width="70" height="110" rx="4" fill="#191921" stroke="#8b5cf6" stroke-width="2"/>
+
+      <rect x="35" y="155" width="40" height="6" fill="#c6f135" fill-opacity="0.6"/>
+      <rect x="115" y="130" width="40" height="6" fill="#8b5cf6" fill-opacity="0.6"/>
+      <rect x="195" y="165" width="40" height="6" fill="#c6f135" fill-opacity="0.6"/>
+      <rect x="275" y="115" width="40" height="6" fill="#8b5cf6" fill-opacity="0.6"/>
+    </g>
+
+    <!-- checkmark badge -->
+    <g transform="translate(255,20)">
+      <circle cx="0" cy="0" r="22" fill="#0a0a0c" stroke="#c6f135" stroke-width="2"/>
+      <path d="M-9 0 L-2 8 L11 -9" fill="none" stroke="#c6f135" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <text x="40" y="60" font-family="Arial, sans-serif" font-size="15" letter-spacing="4" fill="#8b5cf6" fill-opacity="0.85">WAREHOUSE &amp; INVENTORY</text>
+</svg>
