@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollProgress from './components/ScrollProgress'
@@ -35,18 +35,17 @@ export default function App() {
       <Preloader />
       <ScrollProgress />
       <Navbar />
-      <AnimatePresence mode="wait">
-        <motion.main
-          key={path}
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.35, ease: 'easeInOut' }}
-          className="flex-1"
-        >
-          <Page />
-        </motion.main>
-      </AnimatePresence>
+      {/* No AnimatePresence here — avoids any nested-exit deadlock with
+          the lightbox/tab AnimatePresence instances inside pages */}
+      <motion.main
+        key={path}
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35, ease: 'easeInOut' }}
+        className="flex-1"
+      >
+        <Page />
+      </motion.main>
       <Footer />
       <BackToTop />
     </div>

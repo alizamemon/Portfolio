@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PageShell from '../components/PageShell';
 import Gallery from '../components/Gallery';
 import Certificates from '../components/Certificates';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const tabs = [
     { id: 'gallery', label: 'Moments Gallery' },
@@ -21,9 +21,8 @@ export default function AchievementsPage() {
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
-                            className={`relative rounded-full px-4 py-2 text-xs sm:text-sm font-medium transition-colors ${
-                                activeTab === tab.id ? 'text-ink font-semibold' : 'glass text-white/60 hover:text-white'
-                            }`}
+                            className={`relative rounded-full px-4 py-2 text-xs sm:text-sm font-medium transition-colors ${activeTab === tab.id ? 'text-ink font-semibold' : 'glass text-white/60 hover:text-white'
+                                }`}
                         >
                             {activeTab === tab.id && (
                                 <motion.span
@@ -37,20 +36,16 @@ export default function AchievementsPage() {
                     ))}
                 </div>
 
-                {/* Tab Content */}
-                <AnimatePresence mode="wait">
-                    <motion.div
-                        key={activeTab}
-                        initial={{ opacity: 0, y: 12 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -12 }}
-                        transition={{ duration: 0.25 }}
-                    >
-                        {activeTab === 'gallery' ? <Gallery /> : <Certificates />}
-                    </motion.div>
-                </AnimatePresence>
+                {/* Tab Content — no AnimatePresence needed here, just a fade-in on key change */}
+                <motion.div
+                    key={activeTab}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                >
+                    {activeTab === 'gallery' ? <Gallery /> : <Certificates />}
+                </motion.div>
             </PageShell>
-
         </div>
     );
 }

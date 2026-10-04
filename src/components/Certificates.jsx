@@ -3,17 +3,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Award } from 'lucide-react';
 
 const certificates = [
-  { title: "Fundamentals of Encryption & Quantum-Safe Techniques", image: "/IBM Encryprtion.PNG" },
-  { title: "Cyber Threat Management", image: "/cyber.png" },
-  { title: "End Point Security", image: "/Cisco.PNG" },
+  { title: "Fundamentals of Encryption & Quantum-Safe Techniques", issuer: "IBM", image: "/IBM Encryprtion.PNG" },
+  { title: "Cyber Threat Management", issuer: "Cisco Networking Academy", image: "/cyber.png" },
+  { title: "End Point Security", issuer: "Cisco Networking Academy", image: "/Cisco.PNG" },
   { title: "AI Foundations Associate", issuer: "Oracle University", image: "/Oracle.PNG" },
-  { title: "Generative AI", image: "/Gen AI.jpg" },
+  { title: "Generative AI", issuer: "SSUET ACM society", image: "/Gen AI.jpg" },
   { title: "Aspire Leadership Programme", issuer: "Harvard University", image: "/aspire.png" },
-  { title: "40th IEEEP All Pakistan Students Seminar", image: "/IEEEP.PNG" },
-  { title: "39th Multi-Topic International Conference", image: "/Multi International.PNG" },
-  { title: "Python for Data Science", image: "/Data.PNG" },
-  { title: "SQL for Data Science | University of California", image: "/SQL.PNG" },
-  { title: "Introduction to DevOps", image: "/DevOps.PNG" },
+  { title: "40th IEEEP All Pakistan Students Seminar", issuer: "IEEE", image: "/IEEEP.PNG" },
+  { title: "39th Multi-Topic International Conference", issuer: "International Conference", image: "/Multi International.PNG" },
+  { title: "Python for Data Science", issuer: "IBM", image: "/Data.PNG" },
+  { title: "SQL for Data Science", issuer: "University of California", image: "/SQL.PNG" },
+  { title: "Introduction to DevOps", issuer: "Coursera", image: "/DevOps.PNG" },
 ];
 
 export default function Certificates() {
@@ -56,8 +56,11 @@ export default function Certificates() {
             {cert.image ? (
               <div className="relative w-full h-44 mb-4 rounded-xl overflow-hidden bg-white/5">
                 <img
-                  src={cert.image}
+                  src={encodeURI(cert.image)}
                   alt={cert.title}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                  }}
                   className="w-full h-full object-contain p-2"
                 />
               </div>
@@ -90,11 +93,17 @@ export default function Certificates() {
               initial={{ scale: 0.6, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.6, opacity: 0 }}
-              src={selectedImg.image}
+              src={encodeURI(selectedImg.image)}
               alt={selectedImg.title}
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
               className="max-w-full max-h-[85vh] rounded-lg shadow-2xl border border-line"
             />
-            <button className="absolute top-8 right-8 text-white/70 hover:text-white transition">
+            <button
+              onClick={() => setSelectedImg(null)}
+              className="absolute top-8 right-8 text-white/70 hover:text-white transition"
+            >
               <X size={26} />
             </button>
           </motion.div>
