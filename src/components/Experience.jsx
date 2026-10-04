@@ -4,7 +4,7 @@ const jobs = [
   {
     role: 'Trainee Full-Stack Engineer',
     org: 'Utopia Industries Pvt Ltd | Pakistan Engineering Council',
-    period: 'Apr 2026 – Present',
+    period: 'Apr 2026 – Sep 2026',
     points: [
       'Contributing to an internal ERP system, developing scalable backend services with Java 17 and Spring Boot integrated with high-availability MySQL databases.',
       'Designed a project & task management module with team assignments, start/end dates, and dynamic Gantt chart generation for task timelines and dependencies.',

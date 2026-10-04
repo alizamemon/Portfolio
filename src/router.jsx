@@ -3,28 +3,30 @@ import React, { createContext, useContext, useEffect, useState, useCallback } fr
 const RouterContext = createContext(null);
 
 function getPath() {
-  const hash = window.location.hash.replace(/^#/, '');
-  return hash || '/';
+  return window.location.pathname || '/';
 }
 
 export function RouterProvider({ children }) {
   const [path, setPath] = useState(getPath());
 
   useEffect(() => {
-    const onHashChange = () => {
+    const onPopState = () => {
       setPath(getPath());
       window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
     };
-    window.addEventListener('hashchange', onHashChange);
-    return () => window.removeEventListener('hashchange', onHashChange);
+
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
   const navigate = useCallback((to) => {
-    if (`#${to}` === window.location.hash) {
+    if (window.location.pathname === to) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
-    window.location.hash = to;
+    window.history.pushState({}, '', to);
+    setPath(to);
+    window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
   }, []);
 
   return (
@@ -44,7 +46,7 @@ export function Link({ to, children, className, onClick, ...props }) {
   const { navigate } = useRouter();
   return (
     <a
-      href={`#${to}`}
+      href={to}
       className={className}
       onClick={(e) => {
         e.preventDefault();
